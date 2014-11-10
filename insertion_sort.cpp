@@ -12,8 +12,7 @@ void print(T element)
 template <typename InputIterator>
 void insertion_sort(InputIterator begin, InputIterator end)
 {
-    InputIterator it = begin + 1;
-    for(;it != end; it++)
+    for(InputIterator it = begin + 1; it != end; it++)
     {
         typename std::iterator_traits<InputIterator>::value_type temp = *it;
         InputIterator sub = it - 1;
