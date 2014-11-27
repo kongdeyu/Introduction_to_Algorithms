@@ -1,6 +1,5 @@
 
 #include <iostream>
-#include <vector>
 
 template <typename InputIterator, typename K>
 double horner_rule(InputIterator begin, InputIterator end, K factor)
