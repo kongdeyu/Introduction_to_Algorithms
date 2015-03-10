@@ -4,14 +4,10 @@
 #include <iostream>
 #include <vector>
 
-template <typename InputIterator>
-void print(InputIterator begin, InputIterator end)
+template <typename T>
+void print(T element)
 {
-    for(InputIterator it = begin; it != end; it++)
-    {
-        std::cout << *it << " ";
-    }
-    std::cout << std::endl;
+    std::cout << element << " ";
 }
 
 template <typename InputIterator>
@@ -68,17 +64,19 @@ int32_t main()
     {
         array.push_back(i);
     }
-    std::cout << "permute by sortint:" << std::endl;
     permute_by_sorting(array.begin(), array.end());
-    print(array.begin(), array.end());
+    std::cout << "permute by sorting:";
+    for_each(array.begin(), array.end(), print<int32_t>);
+    std::cout << std::endl;
 
     array.clear();
     for(int32_t i = 0; i < size; i++)
     {
         array.push_back(i);
     }
-    std::cout << "permute in place:" << std::endl;
     permute_in_place(array.begin(), array.end());
-    print(array.begin(), array.end());
+    std::cout << "permute in place:";
+    for_each(array.begin(), array.end(), print<int32_t>);
+    std::cout << std::endl;
     return 0;
 }
